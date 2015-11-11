@@ -8,8 +8,7 @@ var BlogSchema	= new Schema({
   content: String,
   image: String,
   link: String,
-  tags: String,
-  tags_processed: Array,
+  tags: Array,
   date: Date
 });
 
