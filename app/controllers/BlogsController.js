@@ -1,10 +1,21 @@
 'use strict';
-let Blog = rootRequire('app/models/Blog');
+var Blog = rootRequire('app/models/Blog');
 
 module.exports = {
   index: {
     get(req, res) {
-      res.send('you are reaching blogs index')
+
+      Blog.find({})
+        .limit(20)
+        .exec(function(err, blogs) {
+          console.log(blogs);
+
+          res.send(blogs.reduce(function(blogMap, item) {
+            blogMap[item.id] = item;
+            return blogMap;
+          }, {}));
+        });
+
     }
   }
 };
