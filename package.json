@@ -1,0 +1,41 @@
+{
+  "name": "express-boilerplate",
+  "version": "1.0.0",
+  "description": "expressjs boilerplate",
+  "main": "server.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "start": "./node_modules/.bin/nodemon -w ./ --harmony_destructuring",
+    "db:tables:create": "node ./tasks/createTables.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DCKT/express-boilerplate.git"
+  },
+  "keywords": [
+    "kit",
+    "express",
+    "starter",
+    "boilerplate"
+  ],
+  "author": "Thomas Deconinck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DCKT/express-boilerplate/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.9.0",
+    "compression": "^1.5.2",
+    "express": "~4.9.0",
+    "express-session": "^1.11.3",
+    "jade": "~1.6.0",
+    "sequelize": "^3.9.0"
+  },
+  "homepage": "https://github.com/DCKT/express-boilerplate",
+  "devDependencies": {
+    "mocha": "^2.3.3",
+    "node-fetch": "^1.0.6",
+    "nodemon": "^1.7.0",
+    "superagent": "^1.4.0"
+  }
+}

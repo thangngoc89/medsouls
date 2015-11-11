@@ -1,0 +1,15 @@
+html
+  head
+    title
+      block title
+      |  - Awesome site
+    link(rel="stylesheet", href="/stylesheets/style.css")
+  body
+    include ./navigation.jade
+
+    if flash
+      .flash(class="#{flash.type}")
+        p= flash.message
+
+
+    block content
