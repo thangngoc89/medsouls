@@ -71,7 +71,7 @@ Each model must have a **sync** in the *createTables* task wich can be run with 
 Example :
 ```js
 'use strict';
-// app/models/Book.js
+// app/models/Blog.js
 
 let db   = rootRequire('config/db');
 let Book = db.define('book', {

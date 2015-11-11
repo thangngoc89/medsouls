@@ -1,10 +1,7 @@
 'use strict';
 
-let Sequelize = require('sequelize');
-let db = new Sequelize('test', 'root', '', {
-  dialect: 'mysql',
-});
+let mongoose = require('mongoose');
+let database = 'mongodb://root:diendan@ds049624.mongolab.com:49624/books';
+mongoose.connect(database);
 
-db._Sequelize = Sequelize;
-
-module.exports = db;
+module.exports = mongoose;
