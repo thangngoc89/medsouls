@@ -8,7 +8,8 @@ var fbPostSchema	= new Schema({
   message: String,
   link: String,
   created_at: Date,
-  updated_at: Date
+  updated_at: Date,
+  single_url: Boolean
 });
 
 module.exports = mongoose.model('fbposts', fbPostSchema);

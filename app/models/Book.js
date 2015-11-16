@@ -9,12 +9,11 @@ var validateUrl = (string) => {
   });
 };
 
-var BlogSchema	= new Schema({
+var BooksSchema	= new Schema({
   title: {
     type: String,
     required: true
   },
-  content: String,
   markdown: {
     type: String,
     required: true
@@ -27,17 +26,9 @@ var BlogSchema	= new Schema({
       message: '{VALUE} is not a valid URL!'
     }
   },
-  link: {
-    type: String,
-    required: true,
-    unique: true,
-    validate: {
-      validator: validateUrl,
-      message: '{VALUE} is not a valid URL!'
-    }
-  },
   tags: Array,
-  date: Date
+  date: Date,
+  single_url: Boolean
 });
 
-module.exports = mongoose.model('blogs', BlogSchema);
+module.exports = mongoose.model('books', BooksSchema);

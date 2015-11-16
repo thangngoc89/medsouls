@@ -37,7 +37,8 @@ var BlogSchema	= new Schema({
     }
   },
   tags: Array,
-  date: Date
+  date: Date,
+  single_url: Boolean
 });
 
 module.exports = mongoose.model('blogs', BlogSchema);
