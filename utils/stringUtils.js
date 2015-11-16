@@ -21,3 +21,10 @@ exports.strip_tags = (input, allowed) => {
       return allowed.indexOf('<' + $1.toLowerCase() + '>') > -1 ? $0 : '';
     });
 };
+
+exports.urlRegEx = () => {
+  return new RegExp(
+    "(^|[ \t\r\n])((ftp|http|https|gopher|mailto|news|nntp|telnet|wais|file|prospero|aim|webcal):(([A-Za-z0-9$_.+!*(),;/?:@&~=-])|%[A-Fa-f0-9]{2}){2,}(#([a-zA-Z0-9][a-zA-Z0-9$_.+!*(),;/?:@&~=%-]*))?([A-Za-z0-9$_+!*();/?:~-]))"
+    , "g"
+  );
+};

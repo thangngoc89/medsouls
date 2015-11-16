@@ -3,16 +3,14 @@ let Blog = rootRequire('app/models/Blog');
 let Bypasser = require('node-bypasser');
 let URI = require('urijs');
 let async = require('async');
+let stringUtils = require('../../utils/stringUtils');
 
 module.exports = {
   unshorten: {
     post(req, res, next) {
       var data = req.body;
 
-      var getUrlRegEx = new RegExp(
-        "(^|[ \t\r\n])((ftp|http|https|gopher|mailto|news|nntp|telnet|wais|file|prospero|aim|webcal):(([A-Za-z0-9$_.+!*(),;/?:@&~=-])|%[A-Fa-f0-9]{2}){2,}(#([a-zA-Z0-9][a-zA-Z0-9$_.+!*(),;/?:@&~=%-]*))?([A-Za-z0-9$_+!*();/?:~-]))"
-        , "g"
-      );
+      var getUrlRegEx = stringUtils.urlRegEx();
 
       var urls = data.match(getUrlRegEx);
 
