@@ -6,6 +6,7 @@ var Schema		= mongoose.Schema;
 var BlogSchema	= new Schema({
   title : String,
   content: String,
+  markdown: String,
   image: String,
   link: String,
   tags: Array,
