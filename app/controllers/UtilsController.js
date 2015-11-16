@@ -16,11 +16,12 @@ module.exports = {
 
       var urls = data.match(getUrlRegEx);
 
-      async.forEachLimit(urls, 5, function (url, callback) {
+      async.forEach(urls, function (url, callback) {
         let w = new Bypasser(url);
         w.decrypt(function (err, res) {
           if (err == null && res != undefined) {
-            data = data.replace(url, res);
+            data = data.replace(url, generateAnchorHref(res));
+            console.log(url + '---->' + res);
             callback();
           }
         });
@@ -29,6 +30,11 @@ module.exports = {
       });
 
       // End controller
+
+      var generateAnchorHref = (url) => {
+        return "<a href='"+ url +"' target='_blank'>"+ url +"</a>";
+      }
+
     }
   }
 };
